@@ -129,3 +129,16 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 # 上传文件存储路径
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# 缓存配置项
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_cache_table',
+        'TIMEOUT': 300,  # 缓存保存时间 单位秒，默认值为300,
+        'OPTIONS': {
+            'MAX_ENTRIES': 300,  # 缓存最大数据条数
+            'CULL_FREQUENCY': 2,  # 缓存条数达到最大值时 删除1/x的缓存数据
+        }
+    }
+}
