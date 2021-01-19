@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'order',
+    'search',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 用户上传文文件配置
+MEDIA_URL = '/media/'
+# 上传文件存储路径
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
